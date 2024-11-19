@@ -1,53 +1,58 @@
 
-## Installation
+# Installation
 
 Follow these steps to install and set up the project locally:
 1. Clone the Repository
 
 First, clone the repository to your local machine.
-
-git clone https://github.com/your-username/project-name.git
-cd project-name
-
+```
+    git clone https://github.com/your-username/Layer-Assignment.git
+    cd Layer-Assignment
+```
 2. Create a Virtual Environment
 
 It's a good practice to use a virtual environment to isolate your dependencies.
-
-python -m venv venv
-
+```
+    python -m venv venv
+```
 3. Activate the Virtual Environment
+
+   On Linux:
+
+        source venv/bin/activate
 
     On macOS/Linux:
 
-source venv/bin/activate
+        source venv/bin/activate
 
     On Windows:
 
-venv\Scripts\activate
+        venv\Scripts\activate
 
-4. Install Dependencies
+5. Install Dependencies
 
 Install the required Python dependencies using pip.
+```
+    pip install -r requirements.txt
+```
 
-pip install -r requirements.txt
-
-## Setup
+# Setup
 
 1. Create Database Migrations
 
 ```
-python manage.py makemigrations
+    python manage.py makemigrations
 ```
 
 2. Apply Database Migrations
 
 ```
-python manage.py migrate
+    python manage.py migrate
 ```
 
-## Supported APIS
+# Supported APIS
 
-    # Book (list or add to database)
+### Book (list or add to database)
 
         This API is called to get all books or to add a book to database
 
@@ -76,7 +81,7 @@ python manage.py migrate
         on success returns 201
         on error return error text as responce json
 
-    # Borrow a Book
+### Borrow a Book
 
         This API is called to borrow a book
         It extracts 'book_id' and 'borrower_id' from request body
@@ -91,7 +96,7 @@ python manage.py migrate
         on success returns 201
         on error return error text as responce json
 
-    # Return a borrowed book
+### Return a borrowed book
 
 
         This API is called to return a borrowed book
@@ -107,7 +112,7 @@ python manage.py migrate
         on success returns 202
         on error return error text as responce json
 
-    # User Borrowed Books
+### User Borrowed Books
 
         This view is called to get all borrowed books or currently borrowed
         by 'borrower_id'
