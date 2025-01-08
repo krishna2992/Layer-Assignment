@@ -1,29 +1,21 @@
-name: Build
+name: Checkout Current Branch
 
 on:
   push:
     branches:
-      - main
+      - '**'  # Trigger on push to any branch
   pull_request:
     branches:
-      - main
+      - main  # Trigger on PRs targeting the main branch
 
 jobs:
-  build:
-    name: Build and analyze
+  checkout:
     runs-on: ubuntu-latest
-    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout current branch
+        uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@v4
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: http://localhost:9000/
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: sonarsource/sonarqube-quality-gate-action@v1
-      #   timeout-minutes: 5
-      #   env:
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          ref: ${{ github.ref }}  # Checkout the branch that triggered the workflow (push or PR)
+      
+      - name: Show current branch name
+        run: echo "Current branch is: ${{ github.ref }}"
