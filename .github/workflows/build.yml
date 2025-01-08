@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout current branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}  # Checkout the branch that triggered the workflow (push or PR)
       
       - name: Show current branch name
-        run: echo "Current branch is: ${{ github.ref }}"
+        run: 
+          echo ${{ github.ref }}
