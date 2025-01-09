@@ -19,7 +19,6 @@ jobs:
 
       - name: Fail delibariately
         run:
-          echo "Failing deliberately"
           exit 1
       - name: Show current branch name
         run: 
