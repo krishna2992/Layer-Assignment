@@ -23,4 +23,11 @@ jobs:
       - name: Show current branch name
         run: 
           echo {{ github.ref }}
+
+  second_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show current branch name
+        run: 
+          echo {{ github.ref }}    
   
