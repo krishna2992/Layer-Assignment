@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [checkout, second_job]
     # if: ${{ failure('checkout') && success('second_job') }}
-    if: failure()
+    if: success()
     steps:
       - name: Show current branch name
         run: 
