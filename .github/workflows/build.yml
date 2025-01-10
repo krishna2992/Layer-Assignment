@@ -17,9 +17,9 @@ jobs:
         with:
           ref: ${{ github.ref }}  # Checkout the branch that triggered the workflow (push or PR)
 
-      # - name: Fail delibariately
-      #   run:
-      #     exit 1
+      - name: Fail delibariately
+        run:
+          exit 1
       - name: Show current branch name
         run: 
           echo ${{ github.ref }}
