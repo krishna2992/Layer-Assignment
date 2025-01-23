@@ -9,7 +9,7 @@ First, clone the repository to your local machine.
     git clone https://github.com/your-username/Layer-Assignment.git
     cd Layer-Assignment
 ```
-2. Create a Virtual Environment
+2. Create a Python Virtual Environment
 
 It's a good practice to use a virtual environment to isolate your dependencies.
 ```
