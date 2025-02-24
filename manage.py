@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# This is a modified file
+# This is a twice modified file
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
